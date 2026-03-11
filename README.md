@@ -19,14 +19,16 @@ Download the [latest release](https://github.com/viral32111/apc-ups-exporter/rel
 
 The utility does not expect any command-line arguments. There are sensible defaults in place, so it *should* run without any configuration. However, functionality can be changed using the optional command-line flags below.
 
-* `--nis-address <string>`: The Network Information Server's IPv4 address. Defaults to `127.0.0.1`.
+* `--nis-address <string>`: The Network Information Server's hostname or IP address. Defaults to `127.0.0.1`.
 * `--nis-port <number>`: The Network Information Server's TCP port number. Defaults to `3551`.
-* `--metrics-address <string>`: The listening IPv4 address for the Prometheus HTTP metrics server. Defaults to `127.0.0.1`.
+* `--metrics-address <string>`: The listening hostname or IP address for the Prometheus HTTP metrics server. Defaults to `127.0.0.1`.
 * `--metrics-port <number>`: The listening TCP port number for the Prometheus HTTP metrics server. Defaults to `5000`.
 * `--metrics-path <string>`: The HTTP path to the metrics page. Defaults to `/metrics`.
 * `--metrics-interval <string>`: The number of seconds to wait between collecting metrics. Defaults to `15`.
 
 These flags can be prefixed with either a single (`-`) or double (`--`) hyphen.
+
+When using `--metrics-address` with a hostname, it must resolve to a local interface that the exporter can bind to.
 
 Use the `--help` (`-h`) flag for more information.
 
